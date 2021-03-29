@@ -9,8 +9,8 @@
 // System.debug('Hello World!');
 // System.debug('My name is ' + tempvar);
 
-// DemoClass c = new DemoClass();
-// c.createAccount(); 
+ DemoClass c = new DemoClass();
+ c.createAccount('Hari Vignesh'); 
 
 Account acc = new Account(Name = 'New Account');
 insert acc;

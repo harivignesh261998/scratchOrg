@@ -1,0 +1,18 @@
+<template>
+  <lightning-card title="LWC Task">
+    <p class="slds-p-horizontal_small">Adding Two Numbers</p>
+    <lightning-input
+      type="number"
+      name="input1"
+      placeholder="Enter Number..."
+      onchange={handleChangeOne}
+    ></lightning-input>
+    <lightning-input
+      type="number"
+      name="input2"
+      placeholder="Enter Number..."
+      onchange={handleChangeTwo}
+    ></lightning-input>
+    <p class="slds-text-body_regular">The Result is {result}</p>
+  </lightning-card>
+</template>

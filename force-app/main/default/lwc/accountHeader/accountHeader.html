@@ -1,0 +1,45 @@
+<template>
+  <div style="text-align: center">
+    <lightning-button
+      variant="brand-outline"
+      label="load account"
+      onclick={handleClick}
+      class="slds-m-left_x-small"
+    ></lightning-button>
+    <p if:false={showText} class="slds-text-body_regular">
+      Click button to show the data
+    </p>
+  </div>
+  <br />
+  <table
+    if:true={showText}
+    class="slds-table slds-table_bordered slds-border_left slds-border_right"
+  >
+    <thead>
+      <tr class="slds-line-height_reset">
+        <template for:each={columns} for:item="header">
+          <th key={header.Id}>{header.displayName}</th>
+        </template>
+      </tr>
+    </thead>
+    <tbody>
+      <template for:each={accountList} for:item="row">
+        <c-account-body
+          key={row.Id}
+          row={row}
+          col={columns}
+          onedits={handleEvent}
+        ></c-account-body>
+      </template>
+    </tbody>
+  </table>
+
+  <c-edits-modals
+    if:true={isModalOpen}
+    row={row}
+    col={columns}
+    modal-open={isModalOpen}
+    onmclose={handleClose}
+    onmsubmit={handleSubmit}
+  ></c-edits-modals>
+</template>

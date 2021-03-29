@@ -1,0 +1,35 @@
+<template>
+  <table
+    class="slds-table slds-table_bordered slds-border_left slds-border_right"
+  >
+    <thead>
+      <tr class="slds-line-height_reset">
+        <template iterator:it={headerItem}>
+          <th key={it.value.Id}>{it.value.label}</th>
+        </template>
+      </tr>
+    </thead>
+    <tbody>
+      <template iterator:it={accountList}>
+        <tr key={it.value.Id} if:true={it.first} style="color: green">
+          <td>{it.value.LastName}</td>
+          <td>{it.value.HomePhone}</td>
+          <td>{it.value.Email}</td>
+          <td>{it.value.MailingCity}</td>
+        </tr>
+        <tr key={it.value.Id}>
+          <td>{it.value.LastName}</td>
+          <td>{it.value.HomePhone}</td>
+          <td>{it.value.Email}</td>
+          <td>{it.value.MailingCity}</td>
+        </tr>
+        <tr key={it.value.Id} if:true={it.last} style="color: blue">
+          <td>{it.value.LastName}</td>
+          <td>{it.value.HomePhone}</td>
+          <td>{it.value.Email}</td>
+          <td>{it.value.MailingCity}</td>
+        </tr>
+      </template>
+    </tbody>
+  </table>
+</template>

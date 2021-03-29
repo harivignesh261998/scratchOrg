@@ -1,0 +1,15 @@
+<template>
+  <tr>
+    <template iterator:it={columns}>
+      <td key={it.value.Id} if:false={it.last}>{result}</td>
+      <td key={it.value.Id} if:true={it.last}>
+        <lightning-icon
+          icon-name="standard:record_update"
+          alternative-text="Approved"
+          title="Edit"
+          onclick={handleClick}
+        ></lightning-icon>
+      </td>
+    </template>
+  </tr>
+</template>
