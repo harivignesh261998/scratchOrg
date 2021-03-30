@@ -1,11 +1,12 @@
-import { LightningElement, api, track } from "lwc";
+import { LightningElement, api } from "lwc";
 
 export default class EditsModals extends LightningElement {
   @api modalOpen;
   @api row;
   @api col;
-  @track editedValue = {};
+  editedValue = {};
   index = 0;
+  indexOne = 0;
 
   get columns() {
     let col = JSON.parse(JSON.stringify(this.col));
